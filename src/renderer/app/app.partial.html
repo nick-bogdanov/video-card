@@ -1,0 +1,29 @@
+<header ng-if='renderedData || streamData.length' class="site-header navbar-fixed-top toolbar toolbar-header">
+
+    <h1 class="title">Товаров: <span ng-bind='renderedData.length || streamData.length'></span></h1>
+
+    <div ng-if='renderedData' class="toolbar-actions">
+        <button ng-click='exportToExcel()' class="btn btn-xs btn-default">
+            <span class="icon icon-home icon-text"></span>
+            Експорт в Excel
+        </button>
+    </div>
+
+</header>
+
+<header ng-if='!renderedData && !streamData.length' class="site-header navbar-fixed-top toolbar toolbar-header">
+
+    <h1 class="title">Выберите сайт для парсинга</h1>
+
+    <div class="toolbar-actions">
+
+    </div>
+
+</header>
+
+<div class="pane-group">
+    <navigation (currentSite)='setCurrentSite($event)'></navigation>
+    <div class="content-margin-top pane">
+        <e-bay *ngIf='currentSite === "eBay"' [loadedData]='site.eBay' (componentData)='setDataToComponentModel($event)'></e-bay>
+    </div>
+</div>

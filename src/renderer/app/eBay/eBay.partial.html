@@ -1,0 +1,33 @@
+<table class="table-striped">
+    <thead>
+        <tr>
+            <th>
+                Сайт
+            </th>
+            <th>
+                <a href="#" ng-click="orderByField='category'; reverseSort = !reverseSort">
+                    Категория<span ng-show="orderByField == 'category'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+                  </a>
+            </th>
+            <th>
+                <a href="#" ng-click="orderByField='priceNumber'; reverseSort = !reverseSort">
+                    Цена<span ng-show="orderByField == 'priceNumber'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+                  </a>
+            </th>
+            <th>
+                <a href="#" ng-click="orderByField='name'; reverseSort = !reverseSort">
+                    Название<span ng-show="orderByField == 'name'"><span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+                  </a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let data of renderedData'>
+            <td><a>ebaY</a></td>
+            <td>{{data.price}}</td>
+            <td>
+                <a href='javascript:void(0)' (click)='openLink(data.href)'>{{data.name}}</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

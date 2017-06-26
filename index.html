@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Web scrapper</title>
+</head>
+
+<link rel='stylesheet' href='./assets/styles/photon.min.css'></link>
+<link href="./node_modules/@angular/material/prebuilt-themes/indigo-pink.css" rel="stylesheet">
+<link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel='stylesheet' href='./src/styles/scrab.css'></link>
+
+<body>
+
+  <div class="window" ng-controller="render as vm">
+
+    <div class="window-content">
+      <app></app>
+    </div>
+  </div>
+</body>
+
+<script>
+  var electron = require('electron');
+  
+  // You can also require other files to run in this process
+  require('./build/vendor.js')
+  require('./build/app.js')
+
+</script>
+
+</html>
